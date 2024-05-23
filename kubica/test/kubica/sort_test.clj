@@ -39,6 +39,11 @@
         high (inc (+ low (rand-int 100)))]
     (long-array (range low high))))
 
+(defn- random-ordered-vector []
+  (let [low (rand-int 200)
+        high (inc (+ low (rand-int 100)))]
+    (vec (range low high))))
+
 (deftest test-insertion-sort
   (are [expected raw]
     (is (Arrays/equals (into-array Number expected)
